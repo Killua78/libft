@@ -6,7 +6,7 @@
 /*   By: nboubeke <nboubeke@learner.42.tech>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/04/20 11:41:46 by nboubeke          #+#    #+#             */
-/*   Updated: 2026/04/21 16:34:32 by nboubeke         ###   ########.fr       */
+/*   Updated: 2026/04/21 17:54:03 by nboubeke         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -130,6 +130,23 @@ void	*ft_memcpy(void *dest, const void *src, size_t n)
 		d++;
 		s++;
 		n--;
+	}
+}
+
+void	*ft_memmove(void *dest, const void *src, size_t n)
+{
+
+}
+
+void	*ft_strlcpy(char *dest, const char *src, size_t size)
+{
+	int	i;
+
+	i = 0;
+	while (i < size)
+	{
+		dest[i] = src[i];
+		i++;
 	}
 }
 
