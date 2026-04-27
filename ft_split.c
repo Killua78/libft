@@ -36,38 +36,37 @@ int	count_word(char *str, char c)
 	{
 		while (str[i] == c)
 			i++;
-		if (str[i] && str[i] != c && (i == 0 || str[i - 1] == c))
-			count++;
-		i++;
+			if (str[i])
+			{
+				count++;
+				while (str[i] && str[i] != c)
+					i++;
+			}
 	}
 	return (count);
 }
 
-void	free_tab(char **str, int len)
+void	free_tab(char **str)
 {
 	int	i;
 
 	i = 0;
-	while (i < len)
+	while (str[i])
 	{
-		free (str[i]);
-		i++;
+		free (str[i++]);
 	}
 	free (str);
 }
 
-char	**ft_split(char const *str, char c)
+static int	fill_tab(char **tab, char const *str, char c)
 {
-	char	**tab;
 	int	i;
 	int	k;
 
 	i = 0;
 	k = 0;
-	tab = malloc(sizeof(char *) * (count_word((char *)str, c) + 1));
-	if (!tab)
-		return (NULL);
-	while(str[k])
+
+	while (str[k])
 	{
 		while (str[k] && str[k] == c)
 			k++;
@@ -75,30 +74,28 @@ char	**ft_split(char const *str, char c)
 		{
 			tab[i] = ft_substr((char *)str, k, word_len((char *)&str[k], c));
 			if (!tab[i])
-			{
-				free_tab(tab, i);
-				return (NULL);
-			}
+				return (0);
 			k += word_len((char *)&str[k], c);
 			i++;
 		}
 	}
 	tab[i] = NULL;
-	return (tab);
+	return (1);
 }
 
-#include <stdio.h>
-
-int main(void)
+char	**ft_split(char const *str, char c)
 {
-	char s[] = "";
-	char c = 'a';
-	char **tab = ft_split(s, c);
+	char	**tab;
 
-	int i = 0;
-	while (tab[i])
+	if (!str)
+		return (NULL);
+	tab = malloc(sizeof(char *) * (count_word((char *)str, c) + 1));
+	if (!tab)
+		return (NULL);
+	if (!fill_tab(tab, str, c))
 	{
-		printf("%s", tab[i]);
-		i++;
+		free_tab(tab);
+		return (NULL);
 	}
+	return(tab);
 }
