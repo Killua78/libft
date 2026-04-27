@@ -77,18 +77,6 @@ int	ft_isprint(char *str)
 	return (0);
 }
 
-int	ft_strlen(char *str)
-{
-	int	i;
-
-	i = 0;
-	while (str[i] != '\0')
-	{
-		i++;
-	}
-	return (i);
-}
-
 // The  memset()  function  fills the first n bytes of the memory area pointed to by s,
 // with the constant byte c
 // The memset() function returns a pointer to the memory area s

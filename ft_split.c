@@ -43,32 +43,62 @@ int	count_word(char *str, char c)
 	return (count);
 }
 
-char	**ft_split(char const *s, char c)
+void	free_tab(char **str, int len)
+{
+	int	i;
+
+	i = 0;
+	while (i < len)
+	{
+		free (str[i]);
+		i++;
+	}
+	free (str);
+}
+
+char	**ft_split(char const *str, char c)
 {
 	char	**tab;
 	int	i;
-	int	j;
 	int	k;
 
 	i = 0;
 	k = 0;
-	tab = malloc(sizeof(char *) * (count_word(str) + 1));
+	tab = malloc(sizeof(char *) * (count_word((char *)str, c) + 1));
+	if (!tab)
+		return (NULL);
 	while(str[k])
 	{
 		while (str[k] && str[k] == c)
 			k++;
 		if (str[k])
 		{
-			j = 0;
-			tab[i] = malloc(sizeof(char) * (word_len(&str[k]) + 1));
-			while (str[k] && str[k] != c)
+			tab[i] = ft_substr((char *)str, k, word_len((char *)&str[k], c));
+			if (!tab[i])
 			{
-				tab[i][j++] = str[k++];
+				free_tab(tab, i);
+				return (NULL);
 			}
-			tab[i][j] = '\0';
+			k += word_len((char *)&str[k], c);
 			i++;
 		}
 	}
 	tab[i] = NULL;
 	return (tab);
+}
+
+#include <stdio.h>
+
+int main(void)
+{
+	char s[] = "";
+	char c = 'a';
+	char **tab = ft_split(s, c);
+
+	int i = 0;
+	while (tab[i])
+	{
+		printf("%s", tab[i]);
+		i++;
+	}
 }
