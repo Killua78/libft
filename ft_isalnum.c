@@ -10,15 +10,9 @@
 /*                                                                            */
 /* ************************************************************************** */
 
-int	ft_isalnum(char *str)
+int	ft_isalnum(int c)
 {
-	if (*str == '\0')
-		return (1);
-	while (*str)
-	{
-		if (ft_isalpha(str) && ft_isdigit(str))
+	if (ft_isalpha(c) && ft_isdigit(c))
 			return (1);
-		str++;
-	}
 	return (0);
 }

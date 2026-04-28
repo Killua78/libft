@@ -1,4 +1,14 @@
-// 42 header
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   ft_strlcat.c                                       :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: nboubeke <nboubeke@learner.42.tech>        +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2026/04/28 19:12:51 by nboubeke          #+#    #+#             */
+/*   Updated: 2026/04/28 19:13:34 by nboubeke         ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
 
 size_t	ft_strlcat(char *dest, const char *src, size_t size)
 {
@@ -6,11 +16,9 @@ size_t	ft_strlcat(char *dest, const char *src, size_t size)
 	size_t n;
 	size_t i;
 	size_t lensrc;
-	size_t lenfull;
 
 	lendest = strlen(dest);
 	lensrc = strlen(src);
-	lenfull = lensrc + lendest;
 	i = 0;
 	n = size;
 
@@ -31,5 +39,5 @@ size_t	ft_strlcat(char *dest, const char *src, size_t size)
 	}
 	dest[i] = '\0';
 
-	return (lenfull);
+	return (lensrc + lendest);
 }

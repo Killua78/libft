@@ -10,15 +10,9 @@
 /*                                                                            */
 /* ************************************************************************** */
 
-int	ft_isprint(char *str)
+int	ft_isprint(int c)
 {
-	if (*str == '\0')
-		return (1);
-	while (*str)
-	{
-		if (*str >= ' ' && *str <= '~')
+	if (c >= ' ' && c <= '~')
 			return (1);
-		str++;
-	}
 	return (0);
 }

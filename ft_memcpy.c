@@ -1,18 +1,25 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_isdigit.c                                       :+:      :+:    :+:   */
+/*   ft_memcpy.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: nboubeke <nboubeke@learner.42.tech>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2026/04/28 16:02:51 by nboubeke          #+#    #+#             */
-/*   Updated: 2026/04/28 16:04:19 by nboubeke         ###   ########.fr       */
+/*   Created: 2026/04/28 19:05:01 by nboubeke          #+#    #+#             */
+/*   Updated: 2026/04/28 19:06:37 by nboubeke         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-int	ft_isdigit(int c)
+void	*ft_memcpy(void *dest, const void *src, size_t n)
 {
-	if (c >= '0' && c <= '9')
-			return (1);
-	return (0);
+	unsigned char	*d;
+	unsigned char	*s;
+
+	d = (unsigned char *)dest;
+	s = (unsigned char *)src;
+	while (n--)
+	{
+		*d++ = *s++;
+	}
+	return (dest);
 }
