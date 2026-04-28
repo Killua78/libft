@@ -10,16 +10,31 @@
 /*                                                                            */
 /* ************************************************************************** */
 
+#include <stdlib.h>
+
 char	*ft_strtrim(char const *s1, char const *set)
 {
 	char	*str;
-	int	i;
+	int		i;
+	int		j;
+	int		k;
 
+	if (!s1)
+		return (NULL);
 	i = 0;
-	str = s1;
-	while (strchr(set, str[i]))
+	k = ft_strlen(s1) - 1;
+	while (ft_strchr(set, s1[i]))
 		i++;
-	while (str
-	while (strrchr(set, s1))
-		s1--
+	while (ft_strrchr(set, s1[k]))
+		k--;
+	str = malloc(sizeof(char) * (k - i + 2));
+	if (!str)
+		return (NULL);
+	j = 0;
+	while (i <= k)
+	{
+		str[j++] = s1[i++];
+	}
+	str[j] = '\0';
+	return (str);
 }

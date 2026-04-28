@@ -21,7 +21,6 @@ int	word_len(char *str, char c)
 	{
 		i++;
 	}
-
 	return (i);
 }
 
@@ -36,12 +35,12 @@ int	count_word(char *str, char c)
 	{
 		while (str[i] == c)
 			i++;
-			if (str[i])
-			{
-				count++;
-				while (str[i] && str[i] != c)
-					i++;
-			}
+		if (str[i])
+		{
+			count++;
+			while (str[i] && str[i] != c)
+				i++;
+		}
 	}
 	return (count);
 }
@@ -65,7 +64,6 @@ static int	fill_tab(char **tab, char const *str, char c)
 
 	i = 0;
 	k = 0;
-
 	while (str[k])
 	{
 		while (str[k] && str[k] == c)
@@ -97,5 +95,5 @@ char	**ft_split(char const *str, char c)
 		free_tab(tab);
 		return (NULL);
 	}
-	return(tab);
+	return (tab);
 }
