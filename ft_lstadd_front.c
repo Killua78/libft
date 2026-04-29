@@ -1,23 +1,17 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_lstnew.c                                        :+:      :+:    :+:   */
+/*   ft_lstadd_front.c                                  :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: nboubeke <nboubeke@learner.42.tech>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2026/04/28 15:10:54 by nboubeke          #+#    #+#             */
-/*   Updated: 2026/04/28 15:58:50 by nboubeke         ###   ########.fr       */
+/*   Created: 2026/04/29 16:34:44 by nboubeke          #+#    #+#             */
+/*   Updated: 2026/04/29 17:01:36 by nboubeke         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-t_list	*ft_lstnew(void *content)
+void	ft_lstadd_front(t_list **list, t_list *new)
 {
-	t_list	*node;
-
-	node = malloc(sizeof(t_list));
-	if (!node)
-		return (NULL);
-	node->content = content;
-	node->next = NULL;
-	return (node);
+	new->next = *list;
+	*list = new;
 }
