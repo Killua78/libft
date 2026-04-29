@@ -1,23 +1,19 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_lstclear.c                                      :+:      :+:    :+:   */
+/*   ft_lstiter.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: nboubeke <nboubeke@learner.42.tech>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2026/04/29 18:38:01 by nboubeke          #+#    #+#             */
-/*   Updated: 2026/04/29 19:12:44 by nboubeke         ###   ########.fr       */
+/*   Created: 2026/04/29 19:15:21 by nboubeke          #+#    #+#             */
+/*   Updated: 2026/04/29 19:21:28 by nboubeke         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-void	ft_lstclear(t_list **lst, void (*del)(void *))
+void	ft_lstiter(t_list *lst, void (*f)(void *))
 {
-	t_list *node;
 	while (*lst != NULL)
 	{
-		node = *lst;
-		*lst = (*lst)->next;
-		del(node->content);
-		free(node);
+		lst = f(lst->content)->next;
 	}
 }
