@@ -1,6 +1,16 @@
-// 42 header
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   ft_substr.c                                        :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: nboubeke <nboubeke@learner.42.tech>        +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2026/04/30 19:17:30 by nboubeke          #+#    #+#             */
+/*   Updated: 2026/04/30 19:30:08 by nboubeke         ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
 
-#include <stdlib.h>
+#include "libft.h"
 
 char	*ft_substr(char const *s, unsigned int start, size_t len)
 {
@@ -8,23 +18,23 @@ char	*ft_substr(char const *s, unsigned int start, size_t len)
 	int	i;
 
 	i = 0;
-	if (ft_strlen(s) < start)
+	if (ft_strlen((char *)s) < start)
 	{
 		str = malloc(1);
 		str[0] = '\0';
 		return (str);
 	}
-
-	str = malloc(sizeof(char) * (len + 1));
-	
+	str = malloc(sizeof(char) * len + 1);
 	if (!str)
 		return (NULL);
 	while (i < len && s[start])
-	{
 		str[i++] = s[start++];
-	}
-
 	str[i] = '\0';
-
 	return (str);
+}
+
+int	main(void)
+{
+	char *str = "ouioui";
+	printf("%s", ft_substr(str, 50, 7));
 }
