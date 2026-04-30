@@ -6,7 +6,7 @@
 /*   By: nboubeke <nboubeke@learner.42.tech>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/04/30 19:17:30 by nboubeke          #+#    #+#             */
-/*   Updated: 2026/04/30 19:30:08 by nboubeke         ###   ########.fr       */
+/*   Updated: 2026/04/30 20:48:36 by nboubeke         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,7 +18,7 @@ char	*ft_substr(char const *s, unsigned int start, size_t len)
 	int	i;
 
 	i = 0;
-	if (ft_strlen((char *)s) < start)
+	if (ft_strlen(s) < start)
 	{
 		str = malloc(1);
 		str[0] = '\0';
@@ -36,5 +36,5 @@ char	*ft_substr(char const *s, unsigned int start, size_t len)
 int	main(void)
 {
 	char *str = "ouioui";
-	printf("%s", ft_substr(str, 50, 7));
+	printf("%s", ft_substr(str, 2, 20));
 }
