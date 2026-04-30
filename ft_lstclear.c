@@ -20,4 +20,5 @@ void	ft_lstclear(t_list **lst, void (*del)(void *))
 		del(node->content);
 		free(node);
 	}
+	*lst = NULL;
 }

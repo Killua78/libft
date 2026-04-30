@@ -6,13 +6,13 @@
 /*   By: nboubeke <nboubeke@learner.42.tech>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/04/26 15:44:51 by nboubeke          #+#    #+#             */
-/*   Updated: 2026/04/26 16:05:33 by nboubeke         ###   ########.fr       */
+/*   Updated: 2026/04/30 17:55:52 by nboubeke         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <stdlib.h>
 
-int	word_len(char *str, char c)
+static int	word_len(char *str, char c)
 {
 	int	i;
 
@@ -24,7 +24,7 @@ int	word_len(char *str, char c)
 	return (i);
 }
 
-int	count_word(char *str, char c)
+static int	count_word(char *str, char c)
 {
 	int	i;
 	int	count;
@@ -45,7 +45,7 @@ int	count_word(char *str, char c)
 	return (count);
 }
 
-void	free_tab(char **str)
+static void	free_tab(char **str)
 {
 	int	i;
 
