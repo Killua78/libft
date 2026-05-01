@@ -10,6 +10,8 @@
 /*                                                                            */
 /* ************************************************************************** */
 
+#include "libft.h"
+
 void	*ft_memset(void *str, int c, size_t n)
 {
 	unsigned char	*ptr;
@@ -21,5 +23,5 @@ void	*ft_memset(void *str, int c, size_t n)
 		ptr++;
 		n--;
 	}
-	return (ptr);
+	return (str);
 }
