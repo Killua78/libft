@@ -10,22 +10,23 @@
 /*                                                                            */
 /* ************************************************************************** */
 
+#include "libft.h"
+
 char	*ft_strnstr(const char *big, const char *little, size_t len)
 {
-	int	i;
-	char	*temp;
+	size_t		i;
+	const char	*temp;
+	size_t		lil;
 
-	temp = (char *)big;
+	temp = big;
 	i = 0;
 	if (*little == '\0')
 		return (temp);
-
-	while (i + strlen(little) <= len)
+	lil = ft_strlen(little);
+	while (i + lil <= len)
 	{
-		if (ft_strncmp(&temp[i], little, strlen(little)) == 0)
-		{
+		if (ft_strncmp(&temp[i], little, lil) == 0)
 			return (&temp[i]);
-		}
 		i++;
 	}
 	return (NULL);

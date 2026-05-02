@@ -1,13 +1,21 @@
 # Variables
-CC = gcc
+CC = cc
 CFLAGS = -Wall -Wextra -Werror
-SOURCES = main.c libft.h
+SOURCES = ft_itoa.c ft_bzero.c
 OBJECTS = $(SOURCES:.c=.o)
-TARGET = 
+NAME = libft.a
 
-$(TARGET): $(OBJECTS)
-	$(CC) -o $@ $^
+all: $(NAME)
 
+$(NAME): $(OBJECTS)
+	ar rcs $@ $^
 %.o: %.c
 	$(CC) $(FLAGS) -c $< -o $@
 
+clean:
+	rm -f *.o
+
+fclean: clean
+	rm -f $(NAME)
+
+re: fclean all
