@@ -6,9 +6,11 @@
 /*   By: nboubeke <nboubeke@learner.42.tech>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/04/29 16:34:44 by nboubeke          #+#    #+#             */
-/*   Updated: 2026/04/30 17:27:21 by nboubeke         ###   ########.fr       */
+/*   Updated: 2026/05/02 19:24:26 by nboubeke         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
+
+#include "libft.h"
 
 void	ft_lstadd_front(t_list **list, t_list *new)
 {

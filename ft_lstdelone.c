@@ -6,9 +6,11 @@
 /*   By: nboubeke <nboubeke@learner.42.tech>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/04/29 18:22:37 by nboubeke          #+#    #+#             */
-/*   Updated: 2026/04/29 18:22:39 by nboubeke         ###   ########.fr       */
+/*   Updated: 2026/05/02 19:26:32 by nboubeke         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
+
+#include "libft.h"
 
 void	ft_lstdelone(t_list *lst, void (*del)(void *))
 {

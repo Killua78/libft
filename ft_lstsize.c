@@ -6,9 +6,11 @@
 /*   By: nboubeke <nboubeke@learner.42.tech>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/04/29 17:04:36 by nboubeke          #+#    #+#             */
-/*   Updated: 2026/04/29 17:14:09 by nboubeke         ###   ########.fr       */
+/*   Updated: 2026/05/02 19:25:00 by nboubeke         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
+
+#include "libft.h"
 
 int	ft_lstsize(t_list *lst)
 {
