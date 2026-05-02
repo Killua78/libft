@@ -6,7 +6,7 @@
 /*   By: nboubeke <nboubeke@learner.42.tech>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/05/02 18:00:28 by nboubeke          #+#    #+#             */
-/*   Updated: 2026/05/02 18:00:45 by nboubeke         ###   ########.fr       */
+/*   Updated: 2026/05/02 19:04:18 by nboubeke         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,7 +20,7 @@ char	*ft_strdup(const char *s)
 	if (!s)
 		return (NULL);
 	i = 0;
-	str = malloc(sizeof(char) * (strlen(s) + 1));
+	str = malloc(sizeof(char) * (ft_strlen(s) + 1));
 	if (!str)
 		return (NULL);
 	while (s[i])

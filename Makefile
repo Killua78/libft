@@ -1,7 +1,7 @@
 # Variables
 CC = cc
 CFLAGS = -Wall -Wextra -Werror
-SOURCES = ft_itoa.c ft_bzero.c
+SOURCES = main.c
 OBJECTS = $(SOURCES:.c=.o)
 NAME = libft.a
 
