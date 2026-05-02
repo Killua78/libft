@@ -6,11 +6,11 @@
 /*   By: nboubeke <nboubeke@learner.42.tech>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/04/26 16:08:34 by nboubeke          #+#    #+#             */
-/*   Updated: 2026/04/26 16:15:52 by nboubeke         ###   ########.fr       */
+/*   Updated: 2026/05/02 19:11:15 by nboubeke         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <stdlib.h>
+#include "libft.h"
 
 static int	fill_itoa(int n)
 {

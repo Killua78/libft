@@ -6,11 +6,11 @@
 /*   By: nboubeke <nboubeke@learner.42.tech>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/04/26 15:44:51 by nboubeke          #+#    #+#             */
-/*   Updated: 2026/04/30 17:55:52 by nboubeke         ###   ########.fr       */
+/*   Updated: 2026/05/02 19:10:23 by nboubeke         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <stdlib.h>
+#include "libft.h"
 
 static int	word_len(char *str, char c)
 {
@@ -18,9 +18,7 @@ static int	word_len(char *str, char c)
 
 	i = 0;
 	while (str[i] && str[i] != c)
-	{
 		i++;
-	}
 	return (i);
 }
 
@@ -51,10 +49,8 @@ static void	free_tab(char **str)
 
 	i = 0;
 	while (str[i])
-	{
-		free (str[i++]);
-	}
-	free (str);
+		free(str[i++]);
+	free(str);
 }
 
 static int	fill_tab(char **tab, char const *str, char c)
@@ -87,7 +83,7 @@ char	**ft_split(char const *str, char c)
 
 	if (!str)
 		return (NULL);
-	tab = malloc(sizeof(char *) * (count_word((char *)str, c) + 1));
+	tab = malloc(sizeof(char *) * ((count_word((char *)str, c) + 1)));
 	if (!tab)
 		return (NULL);
 	if (!fill_tab(tab, str, c))
