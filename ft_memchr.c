@@ -6,7 +6,7 @@
 /*   By: nboubeke <nboubeke@learner.42.tech>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/04/25 13:59:03 by nboubeke          #+#    #+#             */
-/*   Updated: 2026/04/25 15:15:47 by nboubeke         ###   ########.fr       */
+/*   Updated: 2026/05/04 17:30:34 by nboubeke         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,7 +15,7 @@
 void	*ft_memchr(const void *s, int c, size_t n)
 {
 	unsigned char	*str;
-	size_t				i;
+	size_t			i;
 
 	i = 0;
 	str = (unsigned char *)s;

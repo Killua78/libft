@@ -6,7 +6,7 @@
 /*   By: nboubeke <nboubeke@learner.42.tech>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/04/30 19:17:30 by nboubeke          #+#    #+#             */
-/*   Updated: 2026/04/30 20:48:36 by nboubeke         ###   ########.fr       */
+/*   Updated: 2026/05/04 16:41:11 by nboubeke         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,12 +20,14 @@ char	*ft_substr(char const *s, unsigned int start, size_t len)
 	if (!s)
 		return (NULL);
 	i = 0;
-	if (ft_strlen(s) < start)
+	if (ft_strlen(s) <= start)
 	{
 		str = malloc(1);
 		str[0] = '\0';
 		return (str);
 	}
+	if (len > ft_strlen(s) - start)
+		len = ft_strlen(s) - start;
 	str = malloc(sizeof(char) * (len + 1));
 	if (!str)
 		return (NULL);

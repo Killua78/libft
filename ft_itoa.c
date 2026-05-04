@@ -6,7 +6,7 @@
 /*   By: nboubeke <nboubeke@learner.42.tech>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/04/26 16:08:34 by nboubeke          #+#    #+#             */
-/*   Updated: 2026/05/02 19:11:15 by nboubeke         ###   ########.fr       */
+/*   Updated: 2026/05/04 19:21:32 by nboubeke         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -42,7 +42,7 @@ char	*ft_itoa(int n)
 
 	nb = n;
 	count = fill_itoa(n);
-	str = malloc(sizeof(char) * (count + 1));
+	str = malloc(count + 1);
 	if (!str)
 		return (NULL);
 	str[count] = '\0';
@@ -51,10 +51,17 @@ char	*ft_itoa(int n)
 		str[0] = '-';
 		nb = -nb;
 	}
-	while (count--)
+	if (nb == 0)
+		*str = '0';
+	while (nb > 0)
 	{
-		str[count] = nb % 10 + '0';
+		str[--count] = nb % 10 + '0';
 		nb /= 10;
 	}
 	return (str);
 }
+/*
+int main()
+{
+	printf("%s", ft_itoa(0));	
+}*/

@@ -6,7 +6,7 @@
 /*   By: nboubeke <nboubeke@learner.42.tech>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/04/28 19:27:54 by nboubeke          #+#    #+#             */
-/*   Updated: 2026/05/02 19:30:54 by nboubeke         ###   ########.fr       */
+/*   Updated: 2026/05/04 13:47:18 by nboubeke         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,6 +16,7 @@
 # include <stdio.h>
 # include <unistd.h>
 # include <stddef.h>
+# include <stdint.h>
 
 typedef struct s_list
 {
