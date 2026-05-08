@@ -52,7 +52,7 @@ all: $(NAME)
 $(NAME): $(OBJECTS)
 	ar rcs $(NAME) $(OBJECTS)
 %.o: %.c
-	$(CC) $(FLAGS) -c $< -o $@
+	$(CC) $(CFLAGS) -c $< -o $@
 
 clean:
 	rm -f $(OBJECTS)
