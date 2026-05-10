@@ -44,13 +44,15 @@ SOURCES = ft_isalpha.c \
 		ft_lstdelone.c \
 		ft_lstclear.c \
 		ft_lstiter.c \
-		ft_lstmap.c \
+		ft_lstmap.c
 
 OBJECTS = $(SOURCES:.c=.o)
 
 all: $(NAME)
+
 $(NAME): $(OBJECTS)
 	ar rcs $(NAME) $(OBJECTS)
+
 %.o: %.c
 	$(CC) $(CFLAGS) -c $< -o $@
 
@@ -62,4 +64,4 @@ fclean: clean
 
 re: fclean all
 
-.PHONY : all clean fclean re
+.PHONY: all clean fclean re

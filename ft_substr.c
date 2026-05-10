@@ -6,7 +6,7 @@
 /*   By: nboubeke <nboubeke@learner.42.tech>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/04/30 19:17:30 by nboubeke          #+#    #+#             */
-/*   Updated: 2026/05/04 16:41:11 by nboubeke         ###   ########.fr       */
+/*   Updated: 2026/05/10 14:45:35 by nboubeke         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,7 +14,7 @@
 
 char	*ft_substr(char const *s, unsigned int start, size_t len)
 {
-	char	*str;
+	char		*str;
 	size_t		i;
 
 	if (!s)
